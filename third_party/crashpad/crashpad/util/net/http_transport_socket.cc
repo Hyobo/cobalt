@@ -329,7 +329,8 @@ base::ScopedFD CreateSocket(const std::string& hostname,
         } else if (WaitUntilSocketIsReady(result.get())) {
           return result;
         }
-        return base::ScopedFD();
+        continue;
+        //return base::ScopedFD();
       }
 
       return result;
